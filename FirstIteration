@@ -1,0 +1,37 @@
+import java.util.*; // for scanner
+// the way I copied the code from my computer causes wierd indents in the methods
+
+public class Main {
+	public static void main(String[] args) {
+	    System.out.println("This program asks the user a series of questions, please select the corresponding letter.");
+	    String[] responses = new String[3];
+	    int quest = 1;
+        responses[0] = question("Does this program run?", quest);
+        System.out.println();
+        quest++;
+        responses[1] = question("How about now?", quest);
+        System.out.println();
+        quest++;
+
+        // figure out how to record questions and display
+        // answers after all are anwered
+        
+        System.out.println(responses[0] + "\n" + responses[1]);
+	}
+	
+	public static String question(String question, int quest) {
+	    Scanner input = new Scanner(System.in);
+		System.out.println(quest + ": " + question);
+		System.out.println("A: yes");
+		System.out.println("B: no");
+
+		String response = input.next();
+		if (response.equalsIgnoreCase("a")) {
+		    System.out.println("yes");
+		    return "yes";
+		} else {
+		    System.out.println("no");
+		    return "no";
+		}
+	}
+}
